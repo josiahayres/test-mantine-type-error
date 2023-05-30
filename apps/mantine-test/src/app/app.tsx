@@ -1,21 +1,14 @@
-import styled from '@emotion/styled';
-
-import NxWelcome from './nx-welcome';
-
-import { CloseButton } from '@mantine/core';
+import { CloseButton, Container, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
 
 export function App() {
   const [opened, { toggle }] = useDisclosure();
   return (
-    <StyledApp>
-      {opened ? 'open' : 'close'}
+    <Container>
+      <Title>Close button will toggle</Title>
       <CloseButton variant="transparent" onClick={() => toggle()} />
-    </StyledApp>
+      {opened ? 'open' : 'close'}
+    </Container>
   );
 }
 
